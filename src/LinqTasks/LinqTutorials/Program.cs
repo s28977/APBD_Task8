@@ -23,6 +23,11 @@ namespace LinqTutorials
             }
 
             Console.WriteLine();
+
+            Console.WriteLine("Task 3");
+            Console.WriteLine(LinqTasks.Task3());
+
+            Console.WriteLine();
         }
     }
 }

@@ -197,7 +197,7 @@ namespace LinqTutorials
         /// </summary>
         public static int Task3()
         {
-            int result = 0;
+            int result = Emps.Max(e => e.Salary);
             return result;
         }
 
