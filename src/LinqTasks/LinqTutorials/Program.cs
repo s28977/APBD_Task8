@@ -28,7 +28,7 @@ namespace LinqTutorials
             Console.WriteLine(LinqTasks.Task3());
 
             Console.WriteLine();
-            
+
             var task4 = LinqTasks.Task4();
             Console.WriteLine("Task 4");
             foreach (var emp in task4)
@@ -37,7 +37,7 @@ namespace LinqTutorials
             }
 
             Console.WriteLine();
-            
+
             var task5 = LinqTasks.Task5();
             Console.WriteLine("Task 5");
             foreach (var emp in task5)
@@ -46,10 +46,19 @@ namespace LinqTutorials
             }
 
             Console.WriteLine();
-            
+
             var task6 = LinqTasks.Task6();
             Console.WriteLine("Task 6");
             foreach (var emp in task6)
+            {
+                Console.WriteLine(emp);
+            }
+
+            Console.WriteLine();
+            
+            var task7 = LinqTasks.Task7();
+            Console.WriteLine("Task 7");
+            foreach (var emp in task7)
             {
                 Console.WriteLine(emp);
             }
