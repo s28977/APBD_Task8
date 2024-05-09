@@ -231,7 +231,12 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<object> Task6()
         {
-            IEnumerable<object> result = null;
+            IEnumerable<object> result = Emps.Join(Depts, e => e.Deptno, d => d.Deptno, (e, d) => new
+            {
+                e.Ename,
+                e.Job,
+                d.Dname
+            });
             return result;
         }
 
@@ -363,6 +368,5 @@ namespace LinqTutorials
             var result = emps.Where(e => emps.Any(e2 => e2.Mgr == e.Mgr)).OrderBy(e => e.Ename).ThenByDescending(e => e.Salary);
             return result;
         }
-
     }
 }
