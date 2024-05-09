@@ -64,6 +64,12 @@ namespace LinqTutorials
             }
 
             Console.WriteLine();
+            
+            Console.WriteLine("Task 8");
+            Console.WriteLine(LinqTasks.Task8());
+
+            Console.WriteLine();
+
         }
     }
 }
