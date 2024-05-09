@@ -69,6 +69,14 @@ namespace LinqTutorials
             Console.WriteLine(LinqTasks.Task8());
 
             Console.WriteLine();
+            
+            Console.WriteLine("Task 9");
+            var e = LinqTasks.Task9();
+            Console.WriteLine(e.Ename + " " + e.HireDate);
+
+            Console.WriteLine();
+            
+            
 
         }
     }
