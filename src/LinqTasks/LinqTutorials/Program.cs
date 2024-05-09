@@ -28,6 +28,24 @@ namespace LinqTutorials
             Console.WriteLine(LinqTasks.Task3());
 
             Console.WriteLine();
+            
+            var task4 = LinqTasks.Task4();
+            Console.WriteLine("Task 4");
+            foreach (var emp in task4)
+            {
+                Console.WriteLine(emp.Ename + " " + emp.Salary);
+            }
+
+            Console.WriteLine();
+            
+            var task5 = LinqTasks.Task5();
+            Console.WriteLine("Task 5");
+            foreach (var emp in task5)
+            {
+                Console.WriteLine(emp);
+            }
+
+            Console.WriteLine();
         }
     }
 }
