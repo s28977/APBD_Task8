@@ -370,10 +370,18 @@ namespace LinqTutorials
         ///     HAVING COUNT(*)>2
         ///     ORDER BY COUNT(*) DESC;
         /// </summary>
-        public static IEnumerable<Dept> Task15()
+        public static IEnumerable<object> Task15()
         {
-            IEnumerable<Dept> result = null;
-            //result =
+            IEnumerable<object> result = Emps
+                .Where(emp => emp.Job.Contains('A'))
+                .GroupBy(emp => emp.Job)
+                .Where(emps => emps.Count() > 2)
+                .OrderByDescending(emps => emps.Count())
+                .Select(emps => new
+                {
+                    Praca = emps.Key,
+                    LiczbaPracownikow = emps.Count()
+                });
             return result;
         }
 

@@ -118,6 +118,15 @@ namespace LinqTutorials
 
             Console.WriteLine();
             
+            Console.WriteLine("Task 15");
+            var task15 = LinqTasks.Task15();
+            foreach (var job in task15)
+            {
+                Console.WriteLine(job);
+            }
+
+            Console.WriteLine();
+            
             
         }
     }
