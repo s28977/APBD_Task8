@@ -71,11 +71,28 @@ namespace LinqTutorials
             Console.WriteLine();
             
             Console.WriteLine("Task 9");
-            var e = LinqTasks.Task9();
-            Console.WriteLine(e.Ename + " " + e.HireDate);
+            var task9 = LinqTasks.Task9();
+            Console.WriteLine(task9.Ename + " " + task9.HireDate);
 
             Console.WriteLine();
             
+            Console.WriteLine("Task 10");
+            var task10 = LinqTasks.Task10();
+            foreach (var emp in task10)
+            {
+                Console.WriteLine(emp);
+            }
+
+            Console.WriteLine();
+            
+            Console.WriteLine("Task 11");
+            var task11 = LinqTasks.Task11();
+            foreach (var dept in task11)
+            {
+                Console.WriteLine(dept);
+            }
+
+            Console.WriteLine();
             
 
         }

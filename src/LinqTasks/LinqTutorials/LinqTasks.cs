@@ -206,7 +206,8 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<Emp> Task4()
         {
-            IEnumerable<Emp> result = Emps.Where(e => e.Salary == Emps.Max(e2 => e2.Salary));
+            var max = Task3();
+            IEnumerable<Emp> result = Emps.Where(e => e.Salary == max);
             return result;
         }
 
@@ -309,7 +310,12 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<object> Task11()
         {
-            IEnumerable<object> result = null;
+            IEnumerable<object> result = Emps.GroupBy(emp => emp.Deptno)
+                .Join(Depts, emps => emps.Key, dept => dept.Deptno, (emps, dept) => new
+                {
+                    name = dept.Dname,
+                    numOfEmployees = emps.Count()
+                });
             return result;
         }
 
