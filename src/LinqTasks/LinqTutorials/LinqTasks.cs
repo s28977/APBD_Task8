@@ -265,7 +265,20 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<object> Task10()
         {
-            IEnumerable<object> result = null;
+            IEnumerable<object> result = Emps.Select(emp => new
+            {
+                emp.Ename,
+                emp.Job,
+                emp.HireDate
+            }).Union(new[]
+            {
+                new
+                {
+                    Ename = "Brak wartości",
+                    Job = (string)null,
+                    HireDate = (DateTime?)null
+                }
+            });
             return result;
         }
 
@@ -323,7 +336,7 @@ namespace LinqTutorials
             //result =
             return result;
         }
-        
+
         /// <summary>
         ///     SELECT Job AS Praca, COUNT(1) LiczbaPracownikow FROM Emps
         ///     WHERE Job LIKE '%A%'
@@ -337,7 +350,7 @@ namespace LinqTutorials
             //result =
             return result;
         }
-        
+
         /// <summary>
         ///     SELECT * FROM Emps, Depts;
         /// </summary>
@@ -354,9 +367,9 @@ namespace LinqTutorials
         //Put your extension methods here
         public static IEnumerable<Emp> GetEmpsWithSubordinates(this IEnumerable<Emp> emps)
         {
-            var result = emps.Where(e => emps.Any(e2 => e2.Mgr == e.Mgr)).OrderBy(e => e.Ename).ThenByDescending(e => e.Salary);
+            var result = emps.Where(e => emps.Any(e2 => e2.Mgr == e.Mgr)).OrderBy(e => e.Ename)
+                .ThenByDescending(e => e.Salary);
             return result;
         }
-
     }
 }
