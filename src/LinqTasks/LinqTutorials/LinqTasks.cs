@@ -388,10 +388,19 @@ namespace LinqTutorials
         /// <summary>
         ///     SELECT * FROM Emps, Depts;
         /// </summary>
-        public static IEnumerable<Dept> Task16()
+        public static IEnumerable<object> Task16()
         {
-            IEnumerable<Dept> result = null;
-            //result =
+            IEnumerable<object> result = Emps.Join(Depts, emp => emp.Deptno, dept => dept.Deptno, (emp, dept) => new
+            {
+                emp.Empno,
+                emp.Ename,
+                emp.HireDate,
+                emp.Salary,
+                emp.Mgr,
+                emp.Deptno,
+                dept.Dname,
+                dept.Loc
+            });
             return result;
         }
     }
