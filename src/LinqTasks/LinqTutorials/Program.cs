@@ -108,7 +108,17 @@ namespace LinqTutorials
             Console.WriteLine(task13);
 
             Console.WriteLine();
+            
+            Console.WriteLine("Task 14");
+            var task14 = LinqTasks.Task14();
+            foreach (var dept in task14)
+            {
+                Console.WriteLine(dept.Deptno + " " + dept.Dname);
+            }
 
+            Console.WriteLine();
+            
+            
         }
     }
 }

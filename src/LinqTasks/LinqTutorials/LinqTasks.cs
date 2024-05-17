@@ -354,7 +354,12 @@ namespace LinqTutorials
         /// </summary>
         public static IEnumerable<Dept> Task14()
         {
-            IEnumerable<Dept> result = null;
+            IEnumerable<Dept> result = Depts
+                .Where(dept =>
+                { 
+                    var count = Emps.Count(emp => emp.Deptno == dept.Deptno);
+                    return count is 5 or 0;
+                }).OrderBy(dept => dept.Dname);
             return result;
         }
 
