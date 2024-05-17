@@ -94,6 +94,15 @@ namespace LinqTutorials
 
             Console.WriteLine();
             
+            Console.WriteLine("Task 12");
+            var task12 = LinqTasks.Task12();
+            foreach (var emp in task12)
+            {
+                Console.WriteLine(emp.Ename  + " " + emp.Salary);
+            }
+
+            Console.WriteLine();
+            
 
         }
     }
