@@ -341,8 +341,10 @@ namespace LinqTutorials
         /// </summary>
         public static int Task13(int[] arr)
         {
-            int result = 0;
-            //result=
+            int result = arr
+                .GroupBy(i => i)
+                .Single(ints => ints.Count() % 2 != 0)
+                .Key;
             return result;
         }
 
@@ -353,7 +355,6 @@ namespace LinqTutorials
         public static IEnumerable<Dept> Task14()
         {
             IEnumerable<Dept> result = null;
-            //result =
             return result;
         }
 

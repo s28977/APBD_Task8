@@ -103,6 +103,11 @@ namespace LinqTutorials
 
             Console.WriteLine();
             
+            Console.WriteLine("Task 13");
+            var task13 = LinqTasks.Task13([1,1,7,7,1,1,1,1,1,1,1]);
+            Console.WriteLine(task13);
+
+            Console.WriteLine();
 
         }
     }
